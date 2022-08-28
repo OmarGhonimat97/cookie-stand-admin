@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+// import Image from 'next/image'
+// import styles from '../styles/Home.module.css'
 import { useState } from 'react';
 
 
@@ -15,7 +15,8 @@ export default function Home() {
       maximum_customers_per_hour: parseInt(e.target.maxcust.value),
       average_cookies_per_sale: parseFloat(e.target.avgcookies.value),
     }
-    setdata([...data ,locObj]);
+    // setdata([...data ,locObj]);
+    setdata([locObj]);
     // e.target.reset()
   }  
 
