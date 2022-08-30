@@ -1,10 +1,17 @@
-export default function Header() {
-    return (
-        <header className='text-2xl p-4 bg-green-500 text-gray-50'>
-            <h1>
-                Cookie Stand Admin
-            </h1>
+import { useAuth } from '../contexts/auth'
+  
 
-        </header>
-    )
+export default function Header() {
+
+  const { user, logout } = useAuth()
+
+  return (
+    <header className='text-2xl p-4 bg-green-500 text-gray-50'>
+      <span>Cookie Stand Admin</span>
+      {user && <button 
+        onClick={()=>logout()}
+        className="float-right mr-4 px-4 py-1 bg-blue-400 text-base text-gray-50 rounded-lg">
+        Logout</button>}
+    </header>
+  )
 }
