@@ -2,7 +2,8 @@ import axios from 'axios';
 import useSWR from 'swr';
 import { useAuth } from '../contexts/auth';
 
-export const apiUrl = process.env.NEXT_PUBLIC_RESOURCE_URL;
+// export const apiUrl = process.env.NEXT_PUBLIC_RESOURCE_URL;
+export const apiUrl = 'https://cookie-stand-app.herokuapp.com/api/v1/cookie_stands/';
 
 export default function useResource() {
 
@@ -66,8 +67,3 @@ export default function useResource() {
         deleteResource,
     };
 }
-
-/* STRETCH
-This approach works, but it's not very snappy for the user.
-Check the SWR docs to see if you can "optomistically" render updated state while the API response is pending.
-*/
